@@ -14,9 +14,15 @@ var express         = require("express"),
 var authRoutes       = require("./routes/auth"),
     commentRoutes    = require("./routes/comments"),
     campgroundRoutes = require("./routes/campgrounds");
+
+//To make sure that we have a backup url just in case something goes wrong
+var url=process.env.DATABASEURL || "mongodb://localhost:27017/yelp_camp";
     
-mongoose.connect("mongodb://zain:zain123@ds145194.mlab.com:45194/yelp_camp",{useNewUrlParser:true });
+mongoose.connect(url,{useNewUrlParser:true });
+//LOCAL DB
 // mongoose.connect("mongodb://localhost:27017/yelp_camp",{useNewUrlParser:true });
+
+//HEROKU DB
 //mongodb://zain:zain123@ds145194.mlab.com:45194/yelp_camp
 //seedDB();
 
