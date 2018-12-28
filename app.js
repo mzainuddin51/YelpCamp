@@ -14,9 +14,10 @@ var express         = require("express"),
 var authRoutes       = require("./routes/auth"),
     commentRoutes    = require("./routes/comments"),
     campgroundRoutes = require("./routes/campgrounds");
-
-mongoose.connect("mongodb://localhost:27017/yelp_camp",{useNewUrlParser:true });
-
+    
+mongoose.connect("mongodb://zain:zain123@ds145194.mlab.com:45194/yelp_camp",{useNewUrlParser:true });
+// mongoose.connect("mongodb://localhost:27017/yelp_camp",{useNewUrlParser:true });
+//mongodb://zain:zain123@ds145194.mlab.com:45194/yelp_camp
 //seedDB();
 
 app.set("view engine","ejs");
